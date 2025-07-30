@@ -1,0 +1,142 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.sidebar {
+  width: 240px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 56px;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.3s ease;
+
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-top {
+  padding: 45px 0;
+  text-align: center;
+}
+
+.avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+ margin: 5px;
+  
+}
+
+.user-name {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.nav-links {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 60px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: black;
+  border-radius: 8px;
+  transition: background 0.2s;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background-color: #f3f4f6;
+}
+
+.nav-item.active {
+  background: linear-gradient(to right, #3C81F6, #9234EA);
+  color: white;
+  border: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.active-icon {
+  color: white;
+}
+
+
+.sidebar-bottom {
+  border-top: 3px solid #e5e7eb;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  cursor: pointer;
+  
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+ 
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.user-name-sm {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+  font-family: monospace;
+ 
+}
+
+.plan {
+  font-size: 10px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.logout-icon {
+  font-size: 18px;
+  color: #6b7280;
+  transition: transform 0.2s ease;
+  padding-left: 3px;
+  padding-top: 9px;
+
+}
+
+.sidebar-bottom:hover .logout-icon {
+  transform: translateX(4px);
+}

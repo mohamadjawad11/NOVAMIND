@@ -1,0 +1,78 @@
+.aitools-container {
+  padding: 0px 20px;
+  margin: 60px auto;
+  max-width: 1200px;
+}
+
+.aitools-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.aitools-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #012a63; 
+  
+}
+
+.aitools-header p {
+  color: #6b7280; 
+  max-width: 400px;
+  margin: 10px auto 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.aitools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tool-card {
+  background-color: #fdfdfe;
+  padding: 32px 16px;
+  border-radius: 12px;
+  width: 30%; 
+  min-width: 260px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  margin: 0 auto;
+}
+
+.tool-card h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 550;
+  color: #191b1e; 
+ 
+}
+
+.tool-card p {
+  font-size: 16px;
+  color: #616162; /* gray-400 */
+  max-width: 95%;
+  margin: 0 auto;
+
+}

@@ -1,0 +1,58 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar {
+  height: 64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+
+
+.main-content {
+  display: flex;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+}
+
+
+/* Default: Hide menu icon on large screens */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Show menu icon only on screens smaller than 768px */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .content-area {
+    margin-left: 0;
+  }
+}
+

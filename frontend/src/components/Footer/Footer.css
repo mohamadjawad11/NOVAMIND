@@ -1,0 +1,133 @@
+.footer {
+  padding: 20px 44px 0px;
+  width: 100%;
+  color: #6b7280;
+  font-family: sans-serif;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0 -1px 0 rgba(107, 114, 128, 0.2);
+  
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.3);
+  padding-bottom: 30px;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.footer-brand {
+  max-width: 400px;
+}
+
+.brand-logo {
+  height: 36px;
+}
+
+.footer-description {
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.footer-links-wrapper {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .footer-links-wrapper {
+    justify-content: flex-end;
+  }
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.footer-newsletter .newsletter-text {
+  margin-bottom: 16px;
+  max-width: 320px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  height: 36px;
+  max-width: 256px;
+  width: 100%;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+  border-radius: 4px;
+  outline: none;
+}
+
+.newsletter-form input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+.newsletter-form button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0 16px;
+  border: none;
+  border-radius: 4px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 20px;
+}
+
+.footer-bottom a {
+  color: #1f2937;
+  text-decoration: none;
+}
+
+
+.footer-logo {
+  width: 158px; 
+  cursor: pointer;
+  display: block;
+
+}
