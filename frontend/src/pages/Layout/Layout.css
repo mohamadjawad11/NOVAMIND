@@ -27,12 +27,16 @@
 
 .main-content {
   display: flex;
+  margin-left: 240px; /* Adjust for the sidebar width */
 }
+
 
 .content-area {
   flex: 1;
   padding: 20px;
+  overflow: auto;  /* Add this to handle overflowing content */
 }
+
 
 
 /* Default: Hide menu icon on large screens */
@@ -56,3 +60,11 @@
   }
 }
 
+
+.sign-in-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%; 
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { assets } from '../../assets/assets';
 import { Menu, X } from 'lucide-react';
@@ -10,6 +10,10 @@ const Layout = () => {
   const navigate = useNavigate();
   const [sidebar, setSidebar] = useState(false);
   const { user } = useUser();
+
+  useEffect(() => {
+    console.log(user); // Check if user object is populated properly
+  }, [user]);
 
   return user ? (
     <div className="layout-container">
@@ -35,15 +39,14 @@ const Layout = () => {
       </div>
     </div>
   ) : (
-    <SignIn appearance={{
-      variables: {
-        fontFamily: "'Poppins', sans-serif",
-        fontSize: '16px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
-    }} />
+    <div className="sign-in-wrapper">
+      <SignIn appearance={{
+        variables: {
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: '16px',
+        },
+      }} />
+    </div>
   );
 };
 

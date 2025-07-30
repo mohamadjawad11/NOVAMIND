@@ -28,24 +28,20 @@ const Sidebar = ({ sidebar, setSidebar }) => {
 
         <div className="nav-links">
           {navItems.map(({ to, label, Icon }) => (
-            <NavLink
-            
-              key={to}
-              to={to}
-              end={to === '/ai'}
-              onClick={() => setSidebar(false)}
-              className={({ isActive }) =>
-                `nav-item ${isActive ? 'active' : ''}`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  <Icon className={`icon ${isActive ? 'active-icon' : ''}`} />
-                  <span>{label}</span>
-                </>
-              )}
-            </NavLink>
-          ))}
+  <NavLink
+    key={to}
+    to={to}
+    end={to === '/ai'}
+    onClick={() => setSidebar(false)}
+    className={({ isActive }) => 
+      `nav-item ${isActive ? 'active' : ''}`
+    }
+  >
+    <Icon className="icon" />
+    <span>{label}</span>
+  </NavLink>
+))}
+
         </div>
 
       <div className="sidebar-bottom">

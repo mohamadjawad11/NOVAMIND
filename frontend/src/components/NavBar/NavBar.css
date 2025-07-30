@@ -1,3 +1,4 @@
+
 .navbar {
   position: fixed;
   top: 0;
@@ -13,7 +14,7 @@
 
 .navbar-inner {
   width: 100%;
-  max-width: 1350px;
+  max-width: 1430px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,10 +59,13 @@
   height: 40px;
   line-height: 1;
   transition: background-color 0.3s ease;
+
+  font-family: 'Inter', sans-serif;
   
 
 }
 
 .get-started-button:hover {
   background-color: #4a3de0;
+  border: none;
 }
