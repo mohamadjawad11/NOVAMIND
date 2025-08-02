@@ -1,0 +1,132 @@
+.review-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+ 
+  min-height: fit-content;
+  box-sizing: border-box;
+}
+
+.review-left,
+.review-right {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.review-left h3,
+.review-right h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  color: #1f2937;
+}
+
+.review-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.review-file-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  margin-bottom: 0.5rem;
+}
+
+.review-file-name {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.review-file-support {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #10b981, #0284c7);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.review-btn:hover {
+  background: linear-gradient(to right, #0284c7, #10b981);
+  
+}
+
+.review-right .review-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  height: calc(100% - 2rem);
+  text-align: center;
+}
+
+.review-upload-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-custom-upload {
+  background-color: #f1f5f9;
+  padding: 0.3rem 3rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid #d1d5db;
+  transition: background 0.2s ease;
+
+}
+
+.review-custom-upload:hover {
+  background-color: #e2e8f0;
+}
+
+.review-custom-upload input[type="file"] {
+  display: none;
+}
+
+.review-clear-btn {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.review-clear-btn:hover {
+  background-color: #fecaca;
+}
+
+.review-upload-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+

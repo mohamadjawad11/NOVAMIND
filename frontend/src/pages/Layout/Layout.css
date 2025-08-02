@@ -27,25 +27,26 @@
 
 .main-content {
   display: flex;
-  margin-left: 240px; /* Adjust for the sidebar width */
+  margin-left: 240px; 
 }
 
 
 .content-area {
   flex: 1;
   padding: 20px;
-  overflow: auto;  /* Add this to handle overflowing content */
+  overflow: auto;  
+  
 }
 
 
 
-/* Default: Hide menu icon on large screens */
+
 .menu-icon {
   display: none;
   cursor: pointer;
 }
 
-/* Show menu icon only on screens smaller than 768px */
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;

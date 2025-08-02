@@ -1,0 +1,81 @@
+.creation-item {
+  padding: 1rem;
+  width: 100%;
+  font-size: 0.875rem;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth hover transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding light shadow */
+}
+
+.creation-item:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
+
+.creation-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.text-section h2 {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  color: #1f2937; /* Darker color for better readability */
+}
+
+.creation-item-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.creation-item-button {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.creation-item-button:hover {
+  background-color: #bcd6f9;
+  transform: translateY(-2px); 
+}
+
+
+.expanded-wrapper {
+  margin-top: 12px; 
+  margin: 15px;
+  
+}
+
+.image-wrapper {
+  width: 100%;        
+  max-width: 28rem;      
+}
+
+.expanded-image {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.text-wrapper {
+  margin-top: 12px; 
+  height: 100%;     
+  overflow-y: scroll; 
+  font-size: 0.875rem; 
+  color: #374151;   
+}
+
+

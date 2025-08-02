@@ -1,0 +1,145 @@
+.remove-object-container {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  min-height: fit-content;
+  box-sizing: border-box;
+  
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  
+}
+
+.left-panel h3,
+.right-panel h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.55rem;
+  color: #1f2937;
+}
+
+.upload-wrapper {
+  margin-bottom: 1rem;
+}
+
+.custom-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f1f5f9;
+  padding: 0.55rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 40%;
+  transition: background 0.2s ease;
+ 
+}
+
+.custom-upload:hover {
+  background-color: #e2e8f0;
+}
+
+.custom-upload input[type="file"] {
+  display: none;
+}
+
+.upload-icon2 {
+  width: 20px;
+  height: 20px;
+  color: #6366f1;
+}
+
+.upload-text {
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+
+.file-name {
+  font-size: 0.85rem;
+  color: #555;
+    padding-bottom: 10px;
+}
+
+.file-support-text {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 1.3rem;
+}
+
+.desc-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1rem 0 0.3rem;
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0.4rem 0 1.25rem;
+}
+
+.remove-btn2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(to right, #6366f1, #a855f7);
+  color: white;
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.right-panel .placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  height: calc(100% - 2rem);
+  text-align: center;
+}
+
+.upload-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clear-file-btn {
+  background-color: #f5927a;
+border: none;
+  color: #374151;
+  padding: 0.4rem 0.95rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  color: white;
+}
+
+.clear-file-btn:hover {
+  background-color: #c77665;
+  border: none;
+}

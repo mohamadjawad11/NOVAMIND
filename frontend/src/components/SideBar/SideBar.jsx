@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import {  useUser, Protect } from '@clerk/clerk-react';
 import { Eraser, FileText, Hash, House, Image, Scissors, SquarePen, Users,LogOut } from 'lucide-react';
@@ -27,7 +28,10 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         </div>
 
         <div className="nav-links">
+    
+          
           {navItems.map(({ to, label, Icon }) => (
+            
   <NavLink
     key={to}
     to={to}
@@ -36,6 +40,7 @@ const Sidebar = ({ sidebar, setSidebar }) => {
     className={({ isActive }) => 
       `nav-item ${isActive ? 'active' : ''}`
     }
+    
   >
     <Icon className="icon" />
     <span>{label}</span>

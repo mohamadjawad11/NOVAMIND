@@ -1,0 +1,129 @@
+.remove-bg-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  
+ height: fit-content;
+  box-sizing: border-box;
+}
+
+.upload-section,
+.preview-section {
+  flex: 1;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.upload-section h3,
+.preview-section h3 {
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.file-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+
+
+
+.file-label input {
+  display: none;
+
+}
+
+.file-label span {
+  display: inline-block;
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.file-name {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.file-support-text {
+  font-size: 0.75rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.remove-btn {
+  background: linear-gradient(to right, #fca311, #f45d22);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background: linear-gradient(to right, #f45d22, #fca311);
+}
+
+.preview-section .placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  height: calc(100% - 2rem);
+  text-align: center;
+}
+
+.preview-section .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-upload-wrapper {
+  margin-bottom: 1rem;
+}
+
+.custom-upload {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f1f5f9;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  width: fit-content;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.custom-upload:hover {
+  background-color: #e3edfb;
+}
+
+.custom-upload input[type="file"] {
+  display: none;
+}
+
+.upload-icon {
+  width: 50px;
+  height: 20px;
+  color: #f45d22;
+}
+
+.upload-icon2 {
+  width: 100px;
+  height: 40px;
+  color: #f45d22;
+}
+.upload-text {
+  color: #1f2937;
+  font-size: 0.95rem;
+}
