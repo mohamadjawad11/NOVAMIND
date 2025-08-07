@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './WriteArticle.css';
 import { Copy, Edit, FileText, PenTool } from 'lucide-react';
+import axios from 'axios';
 
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 const WriteArticle = () => {
   const [topic, setTopic] = useState('');
   const [length, setLength] = useState('');
@@ -12,7 +14,7 @@ const WriteArticle = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder for backend integration
+   
     console.log('Submitted topic:', topic);
     console.log('Selected length:', length);
   };
