@@ -1,24 +1,56 @@
 import React, { useState } from 'react';
 import './GenerateImages.css';
+import axios from 'axios';
+import { useAuth } from '@clerk/clerk-react';
+import toast from 'react-hot-toast';
+import { Image } from 'lucide-react';
+
+
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 const GenerateImages = () => {
   const [description, setDescription] = useState('');
-  const [selectedStyle, setSelectedStyle] = useState('');
+  const [selectedStyle, setSelectedStyle] = useState('Realistic');
+  const [publish, setPublish] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [content, setContent] = useState('');
+  const { getToken } = useAuth();
+  
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // Logic to generate image
-    console.log('Generate with:', { description, selectedStyle });
+    try{
+      setLoading(true);
+      const prompt = `Generate an image of ${description} in the ${selectedStyle} style`;
+      const token = await getToken();
+      const {data} = await axios.post('/api/ai/generate-image', { prompt }, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        }
+      });
+      if(data.success){
+        setContent(data.content);
+        toast.success("Image generated successfully!");
+      }else{
+        toast.error(data.message);
+      }
+      
+    }catch(error){
+      toast.error(error?.response?.data?.message || error.message);
+      console.error("API call failed:", error.message);
+    }
+    setLoading(false);
   };
 
-  const [publish, setPublish] = useState(false);
+  
 
   return (
     <div className="generate-images-container">
       <form className="left-box" onSubmit={handleSubmit}>
         <h3>🖼️ AI Image Generator</h3>
 
-        <label>Describe Your Image</label>
+        <strong>Describe Your Image</strong>
         <textarea
           placeholder="Describe what you want to see in the image.."
           value={description}
@@ -57,12 +89,15 @@ const GenerateImages = () => {
 </div>
 
 
-        <button type="submit" className="generate-image-btn">
-          <span role="img" aria-label="icon">🖼️</span> Generate image
+        <button disabled={loading} type="submit" className="generate-image-btn">
+        {loading ? <span className='spinner'></span> :<Image size={16} />}
+           Generate image
         </button>
       </form>
 
-      <div className="right-box">
+      {
+        !content ? (
+          <div className="right-box">
         <h3>🖼️ Generated image</h3>
         <div className="placeholder">
           <img
@@ -72,7 +107,12 @@ const GenerateImages = () => {
           />
           <p>Describe an image and click "Generate Image" to get started</p>
         </div>
-      </div>
+      </div>):(
+        <div className="right-box generated-image-wrapper"> <img src={content} alt='image'/> </div>
+      )
+      }
+
+      
     </div>
   );
 };

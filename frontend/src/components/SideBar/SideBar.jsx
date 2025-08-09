@@ -25,10 +25,11 @@ const Sidebar = ({ sidebar, setSidebar }) => {
         <div className="sidebar-top">
           <img src={user.imageUrl} alt="User avatar" className="avatar" />
       <h1 className="user-name">
-  {user?.firstName?.charAt(0)?.toUpperCase() + user?.firstName?.slice(1) || ''}
+   { user?.firstName?.charAt(0)?.toUpperCase() + user?.firstName?.slice(1) || ''}
   {' '}
   {user?.lastName?.charAt(0)?.toUpperCase() + user?.lastName?.slice(1) || ''}
 </h1>
+
         </div>
 
         <div className="nav-links">
