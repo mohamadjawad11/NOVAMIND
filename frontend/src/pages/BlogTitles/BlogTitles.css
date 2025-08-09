@@ -1,106 +1,300 @@
-
-
+/*
+ * Base layout container, similar to the article writer.
+ * It uses flexbox to create a responsive, two-column layout on desktop.
+ */
 .blog-title-container {
   display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  min-height: 80vh;
-  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem 4rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+ 
+  min-height: 100vh;
 }
 
-.left-box,
-.right-box {
-  flex: 1;
-  background-color: white;
+/*
+ * Styling for the input form box.
+ * This box is designed to be on the left side, containing the user input fields.
+ */
+.left-box {
+  background-color: #ffffff;
   padding: 2rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
-.left-box{
-    height: fit-content;
-    padding: 1rem;
-    padding-bottom: 30px;
+/*
+ * Styling for the heading within the left box.
+ */
+.left-box h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.right-box{
-    height: fit-content;
-}
-
-.left-box h3,
-.right-box h3 {
-  font-size: 1.25rem;
-  color: #1f2937;
-}
-
+/*
+ * Styling for the form labels.
+ */
 .left-box label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #374151;
-  margin-top: 1rem;
-}
-
-.left-box input {
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  border: 1px solid #d1d5db;
-  outline: none;
   font-size: 1rem;
-  width: 100%;
-  margin-top: 0.5rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
+/*
+ * Styling for the keyword input field.
+ */
+.left-box input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/*
+ * Focus state for the input field.
+ */
+.left-box input[type="text"]:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/*
+ * Container for the category buttons.
+ */
 .category-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
 }
 
+/*
+ * Styling for the category buttons.
+ */
 .category-buttons button {
-  border: none;
-  background-color: #f3f4f6;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  background-color: #f7f7f7;
+  color: #555;
   cursor: pointer;
-  font-size: 0.875rem;
-  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 500;
   transition: all 0.2s ease;
 }
 
+/*
+ * Active (selected) state for the category buttons.
+ */
 .category-buttons button.active {
-  background-color: #6366f1;
-  color: white;
+  background-color: #b6d5e8; /* Updated color to match image */
+  color: #ffffff;
+  border-color: #b6d5e8;
+  box-shadow: 0 2px 8px rgba(182, 213, 232, 0.2);
 }
 
+/*
+ * Hover state for non-selected category buttons.
+ */
+.category-buttons button:hover:not(.active) {
+  background-color: #e0e0e0;
+}
+
+/*
+ * Styling for the main "Generate title" button.
+ */
 .generate-btn2 {
-  margin-top: 1.5rem;
-  padding: 0.75rem;
-  background: linear-gradient(to right, #a855f7, #6366f1);
-  color: white;
+  width: 100%;
+  padding: 1rem;
   border: none;
   border-radius: 0.5rem;
+  background-color: #559ef1; /* Updated color to match image */
+  color: #ffffff;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
-  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.generate-btn2:hover {
-  background: linear-gradient(to right, #792fbe, #6366f1);
+/*
+ * Hover state for the generate button.
+ */
+.generate-btn2:hover:not(:disabled) {
+  background-color: #4480c0; /* Darker shade on hover */
+  transform: translateY(-2px);
 }
 
+/*
+ * Disabled state for the generate button.
+ */
+.generate-btn2:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
+}
 
+/*
+ * Spinner animation for loading state.
+ */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
 
-.right-box .placeholder {
-  margin-top: 2rem;
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*
+ * Container for the generated titles placeholder.
+ * This box is designed to be on the right side.
+ */
+.right-box {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  max-height: 70vh; /* Set a max-height to prevent the box from getting too long */
+  overflow-y: auto;
+}
+
+/*
+ * Styling for the heading within the right box.
+ */
+.right-box h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/*
+ * Placeholder content styling (before titles are generated).
+ */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #6b7280;
+  flex: 1;
 }
 
 .hash-icon {
-  font-size: 3rem;
+  background-color: #f0f2f5;
+  color: #4f46e5;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
   margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.placeholder p {
+  color: #999;
+  font-size: 1rem;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/*
+ * Styling for the generated titles box (after titles are generated).
+ */
+.custom-container-special {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  max-height: 70vh; /* Set a max-height so a scrollbar appears when content is too long */
+  overflow-y: auto;
+}
+
+/*
+ * Styling for the individual titles inside the container.
+ */
+.custom-container-special .generated-title-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.6;
+  color: #333;
+}
+
+.custom-container-special .generated-title-item:last-child {
+  border-bottom: none;
+}
+
+.custom-container-special .generated-title-item p {
+  margin: 0;
+}
+
+/*
+ * Mobile responsiveness: Stacks the boxes vertically.
+ */
+@media (max-width: 768px) {
+  .blog-title-container {
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .left-box,
+  .right-box,
+  .custom-container-special {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .category-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

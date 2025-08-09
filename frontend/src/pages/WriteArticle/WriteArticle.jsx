@@ -2,22 +2,55 @@ import React, { useState } from 'react';
 import './WriteArticle.css';
 import { Copy, Edit, FileText, PenTool } from 'lucide-react';
 import axios from 'axios';
+import {useAuth} from '@clerk/clerk-react';
+import toast from 'react-hot-toast';
+import ReactMarkdown from 'react-markdown';
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 const WriteArticle = () => {
   const [topic, setTopic] = useState('');
   const [length, setLength] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [content,setContent] = useState('');
+  const {getToken}=useAuth();
 
   const handleLengthClick = (value) => {
     setLength(value);
   };
 
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit=async (e)=>{
     e.preventDefault();
-   
-    console.log('Submitted topic:', topic);
-    console.log('Selected length:', length);
-  };
+    if (!length) {
+  toast.error("Please select an article length.");
+  setLoading(false);
+  return;
+}
+
+    try{
+      setLoading(true);
+      const prompt=`Write an article about ${topic} in ${length} length`;
+      const token = await getToken();
+      const {data}=await axios.post('/api/ai/generate-article',{prompt,length},{
+        headers:{
+          
+          'Authorization':`Bearer ${token}`,
+        }
+      });
+      if(data.success){
+        setContent(data.content);
+      }else{
+        toast.error(data.message);
+      }
+    }catch(error){
+    
+    toast.error(error?.response?.data?.message || error.message);
+    console.log(error.message)
+
+    }
+    setLoading(false);
+  }
 
   return (
     <div className="write-article-container">
@@ -47,6 +80,7 @@ const WriteArticle = () => {
           <button
             type="button"
             className={length === 'medium' ? 'selected' : ''}
+            onClick={() => handleLengthClick('medium')}
             >medium (400 - 600 words)
               
             </button>
@@ -60,11 +94,14 @@ const WriteArticle = () => {
           </button>
         </div>
 
-        <button type="submit" className="generate-btn">
-          <FileText size={16} /> Generate Article
+        <button disabled={loading} type="submit" className="generate-btn">
+        {loading ? <span className='spinner'></span>:<FileText size={16} />}
+            Generate Article
         </button>
       </form>
 
+      {!content ? (
+        
     <div className="generated-box">
       <div className="generated-content">
      <h2><Copy size={18} /> Generated article</h2>
@@ -76,6 +113,11 @@ const WriteArticle = () => {
      </p>
      </div>
 </div>
+      ) : (<div className="custom-container-special">
+  <ReactMarkdown>{content}</ReactMarkdown>
+</div>
+)}
+
 
     </div>
   );

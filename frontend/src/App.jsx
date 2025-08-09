@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home.jsx';
 import BlogTitles from './pages/BlogTitles/BlogTitle.jsx';
@@ -10,24 +11,24 @@ import RemoveObject from './pages/RemoveObject/RemoveObject.jsx';
 import RemoveBackground from './pages/RemoveBackground/RemoveBackground.jsx';
 import GenerateImages from './pages/GenerateImages/GenerateImages.jsx';
 import Layout from './pages/Layout/Layout.jsx';
-// import { useAuth } from '@clerk/clerk-react';
+import { useAuth } from '@clerk/clerk-react';
 import {Toaster} from 'react-hot-toast';
 
 const App = () => {
-//   const { isSignedIn, getToken } = useAuth();
+  const { isSignedIn, getToken } = useAuth();
 
-// useEffect(() => {
-//     if (isSignedIn) {
-//       getToken().then((token) => console.log("User Token:", token));
-//     } else {
-//       console.log("User is not signed in.");
-//     }
-//   }, [isSignedIn, getToken]);
+useEffect(() => {
+    if (isSignedIn) {
+      getToken().then((token) => console.log("User Token:", token));
+    } else {
+      console.log("User is not signed in.");
+    }
+  }, [isSignedIn, getToken]);
 
-//   // Debugging: Log the authentication status
-//   useEffect(() => {
-//     console.log("User signed in:", isSignedIn);
-//   }, [isSignedIn]);
+  // Debugging: Log the authentication status
+  useEffect(() => {
+    console.log("User signed in:", isSignedIn);
+  }, [isSignedIn]);
 
   return (
    <div>
