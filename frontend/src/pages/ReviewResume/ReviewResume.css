@@ -2,7 +2,6 @@
   display: flex;
   gap: 2rem;
   padding: 2rem;
- 
   min-height: fit-content;
   box-sizing: border-box;
 }
@@ -13,7 +12,8 @@
   background-color: white;
   padding: 2rem;
   border-radius: 0.75rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  height: fit-content;
 }
 
 .review-left h3,
@@ -130,3 +130,16 @@
 }
 
 
+.review-resume {
+  margin-top: 0.75rem;
+  max-height: 400px; 
+  overflow-y: auto;  
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #475569;
+}
+
+
+.review-resume .reset{
+  all: unset;
+}

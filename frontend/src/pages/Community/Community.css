@@ -98,3 +98,37 @@
   fill: #ef4444;
   color: #dc2626;
 }
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  color: white;
+  
+  background: linear-gradient(
+    135deg,
+    #ff6ec4 0%,
+    #7873f5 25%,
+    #4ade80 50%,
+    #0447b3 75%,
+    #f87171 100%
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

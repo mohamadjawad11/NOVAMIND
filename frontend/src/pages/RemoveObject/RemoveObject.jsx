@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useAuth } from '@clerk/clerk-react';
 import toast from 'react-hot-toast';
 
+
 axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 const RemoveObject = () => {
@@ -34,11 +35,11 @@ const token = await getToken();
 
 const { data } = await axios.post(
   '/api/ai/remove-image-object',
-  formData, // <-- send FormData directly
+  formData, 
   {
     headers: {
       Authorization: `Bearer ${token}`,
-      'Content-Type': 'multipart/form-data', // Let axios set this explicitly
+      'Content-Type': 'multipart/form-data', 
     },
   }
 );
