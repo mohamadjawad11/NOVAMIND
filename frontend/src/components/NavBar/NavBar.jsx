@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import './Navbar.css'; 
+import './NavBar.css'; 
 import { useClerk,useUser,UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
