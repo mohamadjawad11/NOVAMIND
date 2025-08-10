@@ -74,7 +74,6 @@ const Community = () => {
                 <Heart onClick={() => imageLikeToggle(creation.id)} size={20} strokeWidth={1.5} 
                   className={`creation-heart ${creation.likes.includes(user?.id) ? 'liked' : ''}`}
                   />
-  
               </div>
             </div>
           </div>
