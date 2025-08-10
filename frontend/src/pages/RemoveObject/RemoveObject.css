@@ -111,6 +111,10 @@ textarea {
   cursor: pointer;
 }
 
+.remove-btn2:hover {
+  background: linear-gradient(to right, #a855f7, #6366f1);
+}
+
 .right-panel .placeholder {
   display: flex;
   flex-direction: column;
