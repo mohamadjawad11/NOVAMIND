@@ -3,7 +3,7 @@ import React from 'react';
 import {  useUser, Protect } from '@clerk/clerk-react';
 import { Eraser, FileText, Hash, House, Image, Scissors, SquarePen, Users,LogOut } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import './Sidebar.css';
+import './SideBar.css';
 
 const navItems = [
   { to: '/ai', label: 'Dashboard', Icon: House },
