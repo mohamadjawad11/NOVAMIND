@@ -3,7 +3,9 @@
   flex-direction: column;
   padding: 30px;
   gap: 30px;
-   min-height: 500px;
+  min-height: 500px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Top card container: side-by-side layout */
@@ -12,12 +14,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
+  align-items: stretch;
 }
 
 /* Individual Cards */
 .dashboard-card {
   width: 100%;
   max-width: 320px;
+  min-width: 280px;
   height: 105px;
   padding: 15px;
   background-color: white;
@@ -27,6 +32,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
+  box-sizing: border-box;
 }
 
 .dashboard-card:hover {
@@ -89,6 +96,8 @@
   border-radius: 15px;
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .recent-creations-header {
@@ -117,8 +126,6 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
-
 
 /* Recent Creation Items */
 .creation-item {
@@ -180,7 +187,6 @@
   flex-grow: 1; 
 }
 
-
 .loading {
   font-size: 2rem;
   font-weight: bold;
@@ -202,8 +208,189 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .dashboard-container {
+    padding: 40px;
+    gap: 40px;
+  }
+  
+  .dashboard-top-row {
+    gap: 30px;
+  }
+  
+  .dashboard-card {
+    max-width: 350px;
+    height: 120px;
+    padding: 20px;
+  }
+  
+  .recent-creations-section {
+    max-width: 1200px;
+    padding: 30px 40px;
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .dashboard-container {
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  .dashboard-top-row {
+    gap: 15px;
+  }
+  
+  .dashboard-card {
+    max-width: 300px;
+    min-width: 250px;
+  }
+  
+  .recent-creations-section {
+    padding: 20px 25px;
+  }
+  
+  .recent-creations-header {
+    font-size: 1.75rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Small screens (480px to 767px) */
+@media (max-width: 767px) {
+  .dashboard-container {
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .dashboard-top-row {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .dashboard-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    height: 90px;
+    padding: 12px;
+  }
+  
+  .card-header p {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+  
+  .card-header h3 {
+    font-size: 18px;
+  }
+  
+  .icon2, .icon3 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .sparkle-icon {
+    width: 32px;
+    height: 28px;
+  }
+  
+  .recent-creations-section {
+    padding: 15px 20px;
+  }
+  
+  .recent-creations-header {
+    font-size: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .creation-item {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+  }
+  
+  .creation-text p {
+    font-size: 14px;
+  }
+  
+  .creation-text span {
+    font-size: 12px;
+  }
+  
+  .creation-button {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Extra small screens (up to 479px) */
+@media (max-width: 479px) {
+  .dashboard-container {
+    padding: 10px;
+    gap: 15px;
+  }
+  
+  .dashboard-card {
+    height: 80px;
+    padding: 10px;
+  }
+  
+  .card-header p {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  
+  .card-header h3 {
+    font-size: 16px;
+  }
+  
+  .icon2, .icon3 {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .sparkle-icon {
+    width: 28px;
+    height: 24px;
+  }
+  
+  .recent-creations-section {
+    padding: 12px 15px;
+  }
+  
+  .recent-creations-header {
+    font-size: 1.25rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .creation-item {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .creation-text p {
+    font-size: 13px;
+  }
+  
+  .creation-text span {
+    font-size: 11px;
+  }
+  
+  .creation-button {
+    padding: 4px 10px;
+    font-size: 11px;
+    align-self: flex-end;
+  }
+  
+  .loading {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
 }

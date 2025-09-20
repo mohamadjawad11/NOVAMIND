@@ -13,6 +13,8 @@ import GenerateImages from './pages/GenerateImages/GenerateImages.jsx';
 import Layout from './pages/Layout/Layout.jsx';
 import { useAuth } from '@clerk/clerk-react';
 import {Toaster} from 'react-hot-toast';
+//https://novamind-black.vercel.app
+//https://mern-real-estate-cpar.onrender.com
 
 const App = () => {
   const { isSignedIn, getToken } = useAuth();

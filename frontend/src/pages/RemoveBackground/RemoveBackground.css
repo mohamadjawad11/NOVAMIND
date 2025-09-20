@@ -4,8 +4,10 @@
   gap: 5rem;
   padding: 1rem;
   align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
 }
-
 
 .remove-bg-container .upload-section {
   background: #fff;
@@ -15,10 +17,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 430px; 
-  min-height: 300px; 
+  width: 430px;
+  min-height: 300px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
-
 
 .remove-bg-container .preview-section {
   background: #fff;
@@ -28,8 +31,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px; 
+  width: 600px;
   min-height: 400px;
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .remove-bg-container .upload-section h3,
@@ -38,6 +43,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
+  color: #333;
 }
 
 .remove-bg-container .file-upload-wrapper {
@@ -57,6 +63,12 @@
   background-color: #fff;
   width: 100%;
   text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.remove-bg-container .custom-upload:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
 }
 
 .remove-bg-container .custom-upload input {
@@ -66,18 +78,21 @@
 .remove-bg-container .upload-text {
   color: #374151;
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .remove-bg-container .file-name {
   font-size: 0.85rem;
   color: #111827;
   margin: 0.25rem 0;
+  word-break: break-word;
 }
 
 .remove-bg-container .file-support-text {
   font-size: 0.75rem;
   color: #6b7280;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .remove-bg-container .remove-btn {
@@ -94,17 +109,21 @@
   font-weight: 500;
   cursor: pointer;
   width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .remove-bg-container .remove-btn:hover {
-  background: linear-gradient(to right, #deaa84, #f43f5e);
+  background: linear-gradient(to right, #ea580c, #e11d48);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .remove-bg-container .remove-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
-
 
 .remove-bg-container .placeholder {
   flex: 1;
@@ -115,6 +134,7 @@
   color: #9ca3af;
   font-size: 0.85rem;
   text-align: center;
+  padding: 1rem;
 }
 
 .remove-bg-container .upload-icon2 {
@@ -130,4 +150,307 @@
   object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .remove-bg-container {
+    padding: 2rem;
+    gap: 6rem;
+    justify-content: center;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 480px;
+    padding: 2.5rem;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 700px;
+    padding: 2.5rem;
+  }
+  
+  .remove-bg-container .upload-section h3,
+  .remove-bg-container .preview-section h3 {
+    font-size: 1.25rem;
+  }
+  
+  .remove-bg-container .upload-text {
+    font-size: 1rem;
+  }
+  
+  .remove-bg-container .remove-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* Medium screens (900px to 1199px) */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .remove-bg-container {
+    padding: 1.5rem;
+    gap: 3rem;
+    justify-content: center;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 400px;
+    padding: 1.75rem;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 500px;
+    padding: 1.75rem;
+  }
+}
+
+/* Small screens (600px to 899px) */
+@media (max-width: 899px) and (min-width: 600px) {
+  .remove-bg-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.25rem;
+    align-items: center;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+  }
+  
+  .remove-bg-container .upload-section h3,
+  .remove-bg-container .preview-section h3 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small screens (480px to 599px) */
+@media (max-width: 599px) and (min-width: 480px) {
+  .remove-bg-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+    min-height: 250px;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+    min-height: 300px;
+  }
+  
+  .remove-bg-container .upload-section h3,
+  .remove-bg-container .preview-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .remove-bg-container .custom-upload {
+    padding: 0.5rem;
+  }
+  
+  .remove-bg-container .upload-text {
+    font-size: 0.85rem;
+  }
+  
+  .remove-bg-container .file-name {
+    font-size: 0.8rem;
+  }
+  
+  .remove-bg-container .file-support-text {
+    font-size: 0.7rem;
+  }
+  
+  .remove-bg-container .remove-btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .remove-bg-container .upload-icon2 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .remove-bg-container .placeholder {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small screens (up to 479px) */
+@media (max-width: 479px) {
+  .remove-bg-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.75rem;
+    align-items: center;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    min-height: 200px;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    min-height: 250px;
+  }
+  
+  .remove-bg-container .upload-section h3,
+  .remove-bg-container .preview-section h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .remove-bg-container .custom-upload {
+    padding: 0.4rem;
+    gap: 0.3rem;
+  }
+  
+  .remove-bg-container .upload-text {
+    font-size: 0.8rem;
+  }
+  
+  .remove-bg-container .file-name {
+    font-size: 0.75rem;
+  }
+  
+  .remove-bg-container .file-support-text {
+    font-size: 0.65rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .remove-bg-container .remove-btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.7rem;
+    gap: 0.3rem;
+  }
+  
+  .remove-bg-container .upload-icon2 {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.3rem;
+  }
+  
+  .remove-bg-container .placeholder {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 767px) and (orientation: landscape) {
+  .remove-bg-container {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .remove-bg-container .upload-section {
+    width: 50%;
+    max-width: 300px;
+    padding: 0.75rem;
+    min-height: 150px;
+  }
+  
+  .remove-bg-container .preview-section {
+    width: 50%;
+    max-width: 300px;
+    padding: 0.75rem;
+    min-height: 150px;
+  }
+  
+  .remove-bg-container .upload-section h3,
+  .remove-bg-container .preview-section h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .remove-bg-container .custom-upload {
+    padding: 0.3rem;
+  }
+  
+  .remove-bg-container .upload-text {
+    font-size: 0.75rem;
+  }
+  
+  .remove-bg-container .file-name {
+    font-size: 0.7rem;
+  }
+  
+  .remove-bg-container .file-support-text {
+    font-size: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .remove-bg-container .remove-btn {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .remove-bg-container .upload-icon2 {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .remove-bg-container .placeholder {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .remove-bg-container .preview-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  .remove-bg-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .remove-bg-container .upload-section,
+  .remove-bg-container .preview-section {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .remove-bg-container .remove-btn {
+    transition: none;
+  }
+  
+  .remove-bg-container .custom-upload {
+    transition: none;
+  }
 }

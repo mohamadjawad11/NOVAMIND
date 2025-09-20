@@ -1,78 +1,99 @@
+/* AiTools.css */
+
 .aitools-container {
-  padding: 0px 20px;
-  margin: 60px auto;
+  padding: 2rem;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .aitools-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 .aitools-header h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #012a63; 
-  
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .aitools-header p {
-  color: #6b7280; 
-  max-width: 400px;
-  margin: 10px auto 0;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 1rem;
+  color: #555;
 }
 
 .aitools-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  max-width: 960px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .tool-card {
-  background-color: #fdfdfe;
-  padding: 32px 16px;
-  border-radius: 12px;
-  width: 30%; 
-  min-width: 260px;
-  box-sizing: border-box;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem;
   text-align: center;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tool-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .tool-icon {
-  width: 48px;
-  height: 48px;
-  padding: 12px;
-  border-radius: 12px;
-  color: white;
-  margin: 0 auto;
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
 
-.tool-card h3 {
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 550;
-  color: #191b1e; 
- 
+/* Responsive Media Queries */
+
+/* Large tablets and below */
+@media (max-width: 1024px) {
+  .aitools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.tool-card p {
-  font-size: 16px;
-  color: #616162; /* gray-400 */
-  max-width: 95%;
-  margin: 0 auto;
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+  .aitools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 
+  .aitools-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .aitools-header p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .aitools-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .aitools-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .aitools-header p {
+    font-size: 0.9rem;
+  }
+
+  .tool-card {
+    padding: 1rem;
+  }
+
+  .tool-icon {
+    font-size: 2.5rem;
+    padding: 0.75rem;
+  }
 }

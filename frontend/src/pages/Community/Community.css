@@ -7,16 +7,18 @@
   gap: 1rem;
   padding: 1.5rem;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .community-title {
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .community-grid {
   background-color: white;
-  height: 100%;
   width: 100%;
   border-radius: 1rem;
   overflow-y: auto;
@@ -25,6 +27,8 @@
   gap: 1rem;
   padding: 1rem;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 /* Each creation card */
@@ -34,7 +38,9 @@
   padding-top: 0.75rem;
   width: 100%;
   max-width: 32%;
+  min-width: 250px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 .creation-image {
@@ -43,6 +49,7 @@
   object-fit: cover;
   border-radius: 0.5rem;
   display: block;
+  min-height: 200px;
 }
 
 /* Overlay and hover effect */
@@ -70,6 +77,8 @@
 .creation-prompt {
   font-size: 0.875rem;
   display: none;
+  max-width: 60%;
+  line-height: 1.3;
 }
 
 .creation-card:hover .creation-prompt {
@@ -81,6 +90,7 @@
   align-items: center;
   gap: 0.25rem;
   font-size: 0.875rem;
+  flex-shrink: 0;
 }
 
 .creation-heart {
@@ -99,11 +109,13 @@
   color: #dc2626;
 }
 
+/* Spinner for loading */
 .spinner-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .loading {
@@ -113,7 +125,6 @@
   padding: 1rem 2rem;
   border-radius: 12px;
   color: white;
-  
   background: linear-gradient(
     135deg,
     #ff6ec4 0%,
@@ -131,4 +142,272 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large screens (1400px and up) */
+@media (min-width: 1400px) {
+  .community-container {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .community-title {
+    font-size: 1.75rem;
+  }
+  
+  .community-grid {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .creation-card {
+    max-width: 30%;
+    min-width: 280px;
+  }
+  
+  .creation-image {
+    min-height: 250px;
+  }
+}
+
+/* Large screens (1200px to 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .community-container {
+    padding: 1.75rem;
+  }
+  
+  .community-grid {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+  
+  .creation-card {
+    max-width: 31%;
+    min-width: 270px;
+  }
+  
+  .creation-image {
+    min-height: 220px;
+  }
+}
+
+/* Medium screens (900px to 1199px) */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .community-container {
+    padding: 1.5rem;
+  }
+  
+  .community-grid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .creation-card {
+    max-width: 48%;
+    min-width: 250px;
+  }
+  
+  .creation-image {
+    min-height: 200px;
+  }
+  
+  .creation-prompt {
+    font-size: 0.8rem;
+    max-width: 65%;
+  }
+}
+
+/* Small screens (600px to 899px) */
+@media (max-width: 899px) and (min-width: 600px) {
+  .community-container {
+    padding: 1.25rem;
+  }
+  
+  .community-title {
+    font-size: 1.4rem;
+  }
+  
+  .community-grid {
+    gap: 0.875rem;
+    padding: 0.875rem;
+  }
+  
+  .creation-card {
+    max-width: 48%;
+    min-width: 240px;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  
+  .creation-overlay {
+    left: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .creation-image {
+    min-height: 180px;
+  }
+  
+  .creation-prompt {
+    font-size: 0.75rem;
+    max-width: 70%;
+  }
+  
+  .creation-likes {
+    font-size: 0.8rem;
+  }
+  
+  .creation-heart {
+    min-width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+/* Small screens (480px to 599px) */
+@media (max-width: 599px) and (min-width: 480px) {
+  .community-container {
+    padding: 1rem;
+  }
+  
+  .community-title {
+    font-size: 1.3rem;
+  }
+  
+  .community-grid {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .creation-card {
+    max-width: 100%;
+    min-width: unset;
+    padding-left: 0;
+    padding-top: 0;
+  }
+  
+  .creation-overlay {
+    left: 0;
+    padding: 0.5rem;
+  }
+  
+  .creation-image {
+    min-height: 160px;
+  }
+  
+  .creation-prompt {
+    font-size: 0.7rem;
+    max-width: 75%;
+  }
+  
+  .creation-likes {
+    font-size: 0.75rem;
+    gap: 0.2rem;
+  }
+  
+  .creation-heart {
+    min-width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Extra small screens (up to 479px) */
+@media (max-width: 479px) {
+  .community-container {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+  
+  .community-title {
+    font-size: 1.2rem;
+  }
+  
+  .community-grid {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .creation-card {
+    max-width: 100%;
+    min-width: unset;
+    padding-left: 0;
+    padding-top: 0;
+  }
+  
+  .creation-overlay {
+    left: 0;
+    padding: 0.4rem;
+    gap: 0.3rem;
+  }
+  
+  .creation-image {
+    min-height: 140px;
+  }
+  
+  .creation-prompt {
+    font-size: 0.65rem;
+    max-width: 80%;
+    line-height: 1.2;
+  }
+  
+  .creation-likes {
+    font-size: 0.7rem;
+    gap: 0.15rem;
+  }
+  
+  .creation-heart {
+    min-width: 0.9rem;
+    height: 0.9rem;
+  }
+  
+  .loading {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 767px) and (orientation: landscape) {
+  .community-container {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .community-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .community-grid {
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+  
+  .creation-card {
+    max-width: 48%;
+    min-width: 200px;
+  }
+  
+  .creation-image {
+    min-height: 120px;
+  }
+  
+  .creation-overlay {
+    padding: 0.3rem;
+  }
+  
+  .creation-prompt {
+    font-size: 0.6rem;
+    max-width: 70%;
+  }
+  
+  .creation-likes {
+    font-size: 0.65rem;
+  }
+  
+  .creation-heart {
+    min-width: 0.8rem;
+    height: 0.8rem;
+  }
 }

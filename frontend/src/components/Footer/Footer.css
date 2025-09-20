@@ -6,7 +6,6 @@
   font-size: 14px;
   background-color: white;
   box-shadow: 0 -1px 0 rgba(107, 114, 128, 0.2);
-  
 }
 
 .footer-top {
@@ -17,10 +16,15 @@
   gap: 40px;
 }
 
+/* For tablets and above */
 @media (min-width: 768px) {
   .footer-top {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .footer-links-wrapper {
+    justify-content: flex-end;
   }
 }
 
@@ -28,8 +32,10 @@
   max-width: 400px;
 }
 
-.brand-logo {
-  height: 36px;
+.footer-logo {
+  width: 158px;
+  cursor: pointer;
+  display: block;
 }
 
 .footer-description {
@@ -43,13 +49,7 @@
   gap: 40px;
   flex: 1;
   justify-content: flex-start;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-  .footer-links-wrapper {
-    justify-content: flex-end;
-  }
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .footer-links ul {
@@ -86,6 +86,7 @@
   display: flex;
   gap: 8px;
   padding-top: 8px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .newsletter-form input {
@@ -111,8 +112,10 @@
   border-radius: 4px;
   height: 36px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
+/* Footer bottom text */
 .footer-bottom {
   text-align: center;
   font-size: 12px;
@@ -124,10 +127,68 @@
   text-decoration: none;
 }
 
+/* Responsive Media Queries */
 
-.footer-logo {
-  width: 158px; 
-  cursor: pointer;
-  display: block;
+/* Medium devices / tablets */
+@media (max-width: 1024px) {
+  .footer-top {
+    gap: 30px;
+  }
 
+  .footer-links-wrapper {
+    gap: 20px;
+  }
+}
+
+/* Small devices / mobiles */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 20px 0px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-description {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-links-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Extra small devices / phones */
+@media (max-width: 480px) {
+  .footer-description {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .footer-title {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+    padding-top: 15px;
+  }
 }

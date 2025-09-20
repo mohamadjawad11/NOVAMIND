@@ -1,7 +1,4 @@
-/*
- * Base layout container, similar to the article writer.
- * It uses flexbox to create a responsive, two-column layout on desktop.
- */
+/* Base layout container */
 .blog-title-container {
   display: flex;
   flex-wrap: wrap;
@@ -10,14 +7,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   font-family: 'Inter', sans-serif;
- 
   min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/*
- * Styling for the input form box.
- * This box is designed to be on the left side, containing the user input fields.
- */
+/* Left input form box */
 .left-box {
   background-color: #ffffff;
   padding: 2rem;
@@ -27,11 +22,9 @@
   max-width: 500px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-/*
- * Styling for the heading within the left box.
- */
 .left-box h3 {
   display: flex;
   align-items: center;
@@ -42,9 +35,6 @@
   font-weight: 600;
 }
 
-/*
- * Styling for the form labels.
- */
 .left-box label {
   font-size: 1rem;
   color: #555;
@@ -52,9 +42,6 @@
   font-weight: 500;
 }
 
-/*
- * Styling for the keyword input field.
- */
 .left-box input[type="text"] {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -64,20 +51,16 @@
   font-size: 1rem;
   color: #333;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-/*
- * Focus state for the input field.
- */
 .left-box input[type="text"]:focus {
   outline: none;
   border-color: #4f46e5;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
-/*
- * Container for the category buttons.
- */
+/* Category buttons */
 .category-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -86,9 +69,6 @@
   margin-bottom: 2rem;
 }
 
-/*
- * Styling for the category buttons.
- */
 .category-buttons button {
   padding: 0.75rem 1.25rem;
   border: 1px solid #e0e0e0;
@@ -99,34 +79,28 @@
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s ease;
+  flex: 1;
+  min-width: 120px;
 }
 
-/*
- * Active (selected) state for the category buttons.
- */
 .category-buttons button.active {
-  background-color: #b6d5e8; /* Updated color to match image */
+  background-color: #b6d5e8;
   color: #ffffff;
   border-color: #b6d5e8;
   box-shadow: 0 2px 8px rgba(182, 213, 232, 0.2);
 }
 
-/*
- * Hover state for non-selected category buttons.
- */
 .category-buttons button:hover:not(.active) {
   background-color: #e0e0e0;
 }
 
-/*
- * Styling for the main "Generate title" button.
- */
+/* Generate button */
 .generate-btn2 {
   width: 100%;
   padding: 1rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #559ef1; /* Updated color to match image */
+  background-color: #559ef1;
   color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
@@ -138,25 +112,17 @@
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/*
- * Hover state for the generate button.
- */
 .generate-btn2:hover:not(:disabled) {
-  background-color: #4480c0; /* Darker shade on hover */
+  background-color: #4480c0;
   transform: translateY(-2px);
 }
 
-/*
- * Disabled state for the generate button.
- */
 .generate-btn2:disabled {
   background-color: #a5b4fc;
   cursor: not-allowed;
 }
 
-/*
- * Spinner animation for loading state.
- */
+/* Spinner */
 .spinner {
   width: 16px;
   height: 16px;
@@ -169,18 +135,11 @@
 }
 
 @keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/*
- * Container for the generated titles placeholder.
- * This box is designed to be on the right side.
- */
+/* Right box placeholder */
 .right-box {
   background-color: #ffffff;
   padding: 2rem;
@@ -191,13 +150,11 @@
   display: flex;
   flex-direction: column;
   min-height: 400px;
-  max-height: 70vh; /* Set a max-height to prevent the box from getting too long */
+  max-height: 70vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
-/*
- * Styling for the heading within the right box.
- */
 .right-box h3 {
   display: flex;
   align-items: center;
@@ -208,9 +165,6 @@
   font-weight: 600;
 }
 
-/*
- * Placeholder content styling (before titles are generated).
- */
 .placeholder {
   display: flex;
   flex-direction: column;
@@ -238,9 +192,7 @@
   line-height: 1.5;
 }
 
-/*
- * Styling for the generated titles box (after titles are generated).
- */
+/* Generated titles */
 .custom-container-special {
   background-color: #ffffff;
   padding: 2rem;
@@ -251,13 +203,11 @@
   display: flex;
   flex-direction: column;
   min-height: 400px;
-  max-height: 70vh; /* Set a max-height so a scrollbar appears when content is too long */
+  max-height: 70vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
-/*
- * Styling for the individual titles inside the container.
- */
 .custom-container-special .generated-title-item {
   display: flex;
   align-items: center;
@@ -276,14 +226,76 @@
   margin: 0;
 }
 
-/*
- * Mobile responsiveness: Stacks the boxes vertically.
- */
-@media (max-width: 768px) {
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .blog-title-container {
+    padding: 3rem 5rem;
+    gap: 2rem;
+  }
+  
+  .left-box,
+  .right-box,
+  .custom-container-special {
+    max-width: 550px;
+    padding: 2.5rem;
+  }
+  
+  .left-box h3,
+  .right-box h3 {
+    font-size: 1.75rem;
+  }
+  
+  .category-buttons button {
+    font-size: 1rem;
+    padding: 0.85rem 1.5rem;
+  }
+  
+  .generate-btn2 {
+    font-size: 1.2rem;
+    padding: 1.1rem;
+  }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .blog-title-container {
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+  }
+  
+  .left-box,
+  .right-box,
+  .custom-container-special {
+    max-width: 450px;
+    padding: 1.75rem;
+  }
+  
+  .left-box h3,
+  .right-box h3 {
+    font-size: 1.4rem;
+  }
+  
+  .category-buttons {
+    gap: 0.6rem;
+  }
+  
+  .category-buttons button {
+    font-size: 0.85rem;
+    padding: 0.7rem 1.1rem;
+    min-width: 100px;
+  }
+}
+
+/* Small screens (480px to 767px) */
+@media (max-width: 767px) {
   .blog-title-container {
     flex-direction: column;
-    padding: 1rem;
+    padding: 1.5rem 2rem;
     align-items: center;
+    gap: 1.25rem;
   }
 
   .left-box,
@@ -291,10 +303,126 @@
   .custom-container-special {
     width: 100%;
     max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .left-box h3,
+  .right-box h3 {
+    font-size: 1.3rem;
   }
 
   .category-buttons {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .category-buttons button {
+    width: 100%;
+    min-width: unset;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .left-box input[type="text"] {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .generate-btn2 {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+  
+  .hash-icon {
+    font-size: 1.75rem;
+    padding: 1.25rem 1.75rem;
+  }
+  
+  .placeholder p {
+    font-size: 0.95rem;
+    max-width: 250px;
+  }
+}
+
+/* Extra small screens (up to 479px) */
+@media (max-width: 479px) {
+  .blog-title-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .left-box,
+  .right-box,
+  .custom-container-special {
+    padding: 1.25rem;
+    min-height: 350px;
+  }
+
+  .left-box h3,
+  .right-box h3 {
+    font-size: 1.2rem;
+    gap: 0.5rem;
+  }
+
+  .left-box label {
+    font-size: 0.95rem;
+  }
+
+  .left-box input[type="text"] {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .category-buttons button {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .generate-btn2 {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+  
+  .hash-icon {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .placeholder p {
+    font-size: 0.9rem;
+    max-width: 200px;
+  }
+  
+  .custom-container-special .generated-title-item {
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 767px) and (orientation: landscape) {
+  .blog-title-container {
+    flex-direction: row;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  
+  .left-box,
+  .right-box,
+  .custom-container-special {
+    max-width: 50%;
+    min-height: 300px;
+    max-height: 60vh;
+  }
+  
+  .category-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .category-buttons button {
+    flex: 1;
+    min-width: 80px;
   }
 }

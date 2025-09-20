@@ -1,5 +1,4 @@
 import React from 'react';
-import { assets } from "../../assets/assets";
 
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -11,16 +10,14 @@ const Navbar = () => {
   const {user}=useUser();
   const {openSignIn} = useClerk();
 
+  const handleNavigateHome= () => {
+    navigate('/');
+  }
 
   return (
    <div className="navbar">
   <div className="navbar-inner">
-    <img
-      src={assets.logo}
-      alt="logo"
-      className="navbar-logo"
-      onClick={() => navigate('/')}
-    />
+    <h1 className='navbar-logo' style={{color:"#417FF9FF",cursor:"pointer"}} onClick={handleNavigateHome}>NOVA<span style={{color:"#1F2BD4FF"}}>MIND</span></h1>
 
     {
       user ? <UserButton  appearance={{
