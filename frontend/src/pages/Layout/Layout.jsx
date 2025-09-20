@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { assets } from '../../assets/assets';
 import { Menu, X } from 'lucide-react';
 import SideBar from '../../components/SideBar/SideBar.jsx';
 import { useUser, SignIn } from '@clerk/clerk-react';
@@ -15,15 +14,14 @@ const Layout = () => {
     console.log(user); // Check if user object is populated properly
   }, [user]);
 
+  const handleNavigateHome = () => {
+    navigate('/');
+  };
+
   return user ? (
     <div className="layout-container">
       <nav className="navbar">
-        <img
-          src={assets.logo}
-          alt="NovaMind Logo"
-          className="logo"
-          onClick={() => navigate('/')}
-        />
+        <h1 className='navbar-logo' style={{color:"#417FF9FF",cursor:"pointer"}} onClick={handleNavigateHome}>NOVA<span style={{color:"#1F2BD4FF"}}>MIND</span></h1>
         {sidebar ? (
           <X className="menu-icon" onClick={() => setSidebar(false)} />
         ) : (
