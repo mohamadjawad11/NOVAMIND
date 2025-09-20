@@ -13,9 +13,9 @@ export default function Footer() {
             className="footer-logo"
           />
           <p className="footer-description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            Our AI tools empower you to work smarter — from generating high-quality images
+             and writing articles, to reviewing content and creating polished resumes. With intelligent
+              automation, you can save time, boost creativity, and focus on what matters most.
           </p>
         </div>
         <div className="footer-links-wrapper">

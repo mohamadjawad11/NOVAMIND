@@ -6,6 +6,7 @@
   font-size: 14px;
   background-color: white;
   box-shadow: 0 -1px 0 rgba(107, 114, 128, 0.2);
+  
 }
 
 .footer-top {
@@ -21,15 +22,24 @@
   .footer-top {
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* Make each section expand to full width */
+  .footer-brand,
+  .footer-links-wrapper,
+  .footer-newsletter {
+    flex: 1;
+    max-width: none; /* remove the 400px limit */
   }
 
   .footer-links-wrapper {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 }
 
 .footer-brand {
-  max-width: 400px;
+  max-width: 400px; /* overridden in desktop media query */
 }
 
 .footer-logo {
@@ -130,15 +140,40 @@
 /* Responsive Media Queries */
 
 /* Medium devices / tablets */
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .footer-top {
-    gap: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
+  .footer-newsletter{
+    margin-left: 100px;
+  }
+
+  /* Make all columns take equal space */
+  .footer-brand,
+  .footer-links-wrapper,
+  .footer-newsletter {
+    flex: 1;
+    max-width: 100%; /* remove width limit */
+  }
+
+  /* Optional: add spacing inside columns */
+  .footer-brand,
+  .footer-links-wrapper,
+  .footer-newsletter {
+    padding-right: 50px;
+  }
+
+  /* Spread links inside wrapper evenly if you have multiple lists */
   .footer-links-wrapper {
-    gap: 20px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
   }
 }
+
 
 /* Small devices / mobiles */
 @media (max-width: 768px) {

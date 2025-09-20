@@ -23,7 +23,7 @@
 
 .aitools-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* ✅ Always 3 columns on desktop */
   gap: 1.5rem;
 }
 
@@ -53,7 +53,7 @@
 /* Large tablets and below */
 @media (max-width: 1024px) {
   .aitools-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* still 3 per row on tablets */
   }
 }
 
